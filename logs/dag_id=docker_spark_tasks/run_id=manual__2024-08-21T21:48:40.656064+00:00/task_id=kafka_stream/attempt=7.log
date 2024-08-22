@@ -1,0 +1,32 @@
+[2024-08-21T22:38:06.857+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-21T22:38:06.897+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: docker_spark_tasks.kafka_stream manual__2024-08-21T21:48:40.656064+00:00 [queued]>
+[2024-08-21T22:38:06.917+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: docker_spark_tasks.kafka_stream manual__2024-08-21T21:48:40.656064+00:00 [queued]>
+[2024-08-21T22:38:06.917+0000] {taskinstance.py:2856} INFO - Starting attempt 7 of 8
+[2024-08-21T22:38:06.941+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): kafka_stream> on 2024-08-21 21:48:40.656064+00:00
+[2024-08-21T22:38:06.955+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=953) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-21T22:38:06.956+0000] {standard_task_runner.py:72} INFO - Started process 955 to run task
+[2024-08-21T22:38:06.957+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'docker_spark_tasks', 'kafka_stream', 'manual__2024-08-21T21:48:40.656064+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpvnq2zc6g']
+[2024-08-21T22:38:06.959+0000] {standard_task_runner.py:105} INFO - Job 53: Subtask kafka_stream
+[2024-08-21T22:38:07.043+0000] {task_command.py:467} INFO - Running <TaskInstance: docker_spark_tasks.kafka_stream manual__2024-08-21T21:48:40.656064+00:00 [running]> on host 2b775d69f181
+[2024-08-21T22:38:07.177+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='docker_spark_tasks' AIRFLOW_CTX_TASK_ID='kafka_stream' AIRFLOW_CTX_EXECUTION_DATE='2024-08-21T21:48:40.656064+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-21T21:48:40.656064+00:00'
+[2024-08-21T22:38:07.179+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-08-21T22:38:07.179+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-08-21T22:38:07.180+0000] {logging_mixin.py:190} INFO - Current task name:kafka_stream state:running start_date:2024-08-21 22:38:06.897911+00:00
+[2024-08-21T22:38:07.180+0000] {logging_mixin.py:190} INFO - Dag name:docker_spark_tasks and current dag run status:running
+[2024-08-21T22:38:07.180+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-21T22:38:07.181+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-21T22:38:07.182+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec node-master /usr/bin/python /home/spark/src/kafka/kakfa_stream.py']
+[2024-08-21T22:38:07.210+0000] {subprocess.py:86} INFO - Output:
+[2024-08-21T22:38:09.292+0000] {subprocess.py:93} INFO - Offset atualizado e dados processados com sucesso.
+[2024-08-21T22:38:09.554+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-08-21T22:38:09.605+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-21T22:38:09.607+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=docker_spark_tasks, task_id=kafka_stream, run_id=manual__2024-08-21T21:48:40.656064+00:00, execution_date=20240821T214840, start_date=20240821T223806, end_date=20240821T223809
+[2024-08-21T22:38:09.644+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-08-21T22:38:09.645+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-08-21T22:38:09.645+0000] {logging_mixin.py:190} INFO - Dag name:docker_spark_tasks queued_at:2024-08-21 22:38:03.060016+00:00
+[2024-08-21T22:38:09.646+0000] {logging_mixin.py:190} INFO - Task hostname:2b775d69f181 operator:BashOperator
+[2024-08-21T22:38:09.713+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-21T22:38:09.774+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-21T22:38:09.783+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
